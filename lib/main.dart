@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
+import 'package:medsync/forgot_password.dart';
 import 'package:medsync/profile_screen.dart';
 
 void main() async {
@@ -101,7 +102,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 prefixIcon: Icon(Icons.lock, color: Colors.black)),
           ),
           const SizedBox(height: 12.0),
-          const Text("Forgot Password?", style: TextStyle(color: Colors.blue)),
+          // const Text("Forgot Password?", style: TextStyle(color: Colors.blue)),
+         GestureDetector(
+          onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ForgotPasswordPage()),
+            );
+          },
+          child : const Text("Forgot Password?", style: TextStyle(color: Colors.blue))
+         ), 
           const SizedBox(height: 88.0),
           Container(
             width: double.infinity,
